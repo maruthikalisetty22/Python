@@ -1,0 +1,8 @@
+def masteryoda(str):
+    word_list = str.split()
+    reverse_list = word_list[::-1]
+    reverse_list = " ".join(reverse_list)
+    print(reverse_list)
+  
+str = "Hello how are you"   
+masteryoda(str)
