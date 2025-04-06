@@ -6,3 +6,10 @@ def masteryoda(str):
   
 str = "Hello how are you"   
 masteryoda(str)
+
+
+def abs_func(n):
+    return (abs(100-n) <= 10) or (abs(200-n) <= 10)
+    
+output = abs_func(950)
+print(output)
