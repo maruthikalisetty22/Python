@@ -48,3 +48,14 @@ def str_list_conversion(inp_str):
     
 inp_str = "Hello dude how are you"
 str_list_conversion(inp_str)
+
+#Splicer
+def splicer(word_list):
+    for word in word_list:
+        if len(word) % 2 == 0:
+            print("Even")
+        else:
+            print(word[:4])  # print first 4 letters of the current word
+
+words = ["Hello", "Dude", "how", "are", "you"]
+splicer(words)
