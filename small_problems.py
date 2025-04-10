@@ -59,3 +59,51 @@ def splicer(word_list):
 
 words = ["Hello", "Dude", "how", "are", "you"]
 splicer(words)
+
+
+#### Check if given number is in the range of low and high
+
+def check_range(num, low, high):
+    if num in range(low, high+1):
+        print(f"Yes {num} is in the range b/w {low} & {high}")
+    else:
+        print(f"No {num} is not in the range b/w {low} & {high}")
+
+check_range(5, 4, 4)
+
+
+#### Return bolean
+
+def check_range(num, low, high):
+    if num in range(low, high+1):
+        return True
+    else:
+        return False
+        
+output = check_range(5, 4, 6)
+print(output)
+
+# Calculate no of upper case and low case words in a given string
+
+def up_low(s):
+    upper_count = 0
+    lower_count = 0
+    upper_list = []
+    lower_list = []
+
+    for i in s:
+        if i.isupper():
+            upper_count += 1
+            upper_list.append(i)
+        elif i.islower():
+            lower_count += 1
+            lower_list.append(i)
+
+    print(f"This is upper count: {upper_count}")
+    print(f"This is lower count: {lower_count}")
+    print(f"Uppercase letters: {upper_list}")
+    print(f"Lowercase letters: {lower_list}")
+
+# Example usage
+s = "Hello dude How are you doing, Is everything Going good?"
+up_low(s)
