@@ -98,5 +98,26 @@ word_filter = list(filter(lambda x: len(x) > 3, inp_lst))
 print(word_filter)
 
 # ##Convert list of strings to single string with comma separator
-# comma_string = " ".join(inp_lst)
-# print(comma_string)
+comma_string = " ".join(inp_lst)
+print(comma_string)
+
+#nested list count occurance
+def count_target_occurrence(nested_list, target):
+    count = 0
+    for sublist in nested_list:
+        print(sublist)
+        for num in sublist:
+            print(num)
+            if num == target:
+                count += 1
+    return count
+
+# Example nested list
+nested = [[1, 2, 3], [4, 2, 2], [5, 6, 2]]
+
+# Target to search
+target = 2
+
+# Function call
+result = count_target_occurrence(nested, target)
+print(f"The number {target} appears {result} times.")
