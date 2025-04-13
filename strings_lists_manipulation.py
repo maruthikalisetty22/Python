@@ -145,3 +145,19 @@ target = 2
 # Function call
 result = count_target_occurrence(nested, target)
 print(f"The number {target} appears {result} times.")
+
+#mixed list count occurance (list and int within list)
+def count_occurrence(nested_list, target):
+    count = 0
+    for item in nested_list:
+        if isinstance(item, list):
+            count += item.count(target)  # If item is a list, count target inside it
+        else:
+            if item == target:
+                count += 1
+    return count
+
+# Example usage
+nested_list = [1, 2,2, [4, 2, 2], 5, 6, 2, [2,3]]
+target = 2
+print(f"{target} appears {count_occurrence(nested_list, target)} times.")
