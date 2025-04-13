@@ -1,4 +1,28 @@
+################# Diff data types #######################
+
+tuple_lst = tuple(range(1,6))
+print(tuple_lst)
+
+list_lst = list(range(1,6))
+print(list_lst)
+
+set_lst = set(range(1,6))
+print(set_lst)
+
+for i in range(0, len(words)):
+    print(i)
+    
+for i in range(0, len(inp_lst)):
+    print(i)
+
+dict={}    
+for i,j in enumerate(inp_lst):
+    print(i)
+    dict[i] = j
+print(dict)
+
 ################# INPUTS #######################
+
 words = "hello dude how are you ?"
 inp_lst = ["hello", "dude", "how", "are", "you?"]
 
