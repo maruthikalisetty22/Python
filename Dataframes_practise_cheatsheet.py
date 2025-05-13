@@ -75,7 +75,21 @@ Windowspec = Window.partitionBy("department").orderBy("salary")
 df.withColumn("rank", row_number().over(Windowspec))
 
 ##Handling nulls
-
 df.dropna()
 df.fillna("N/a")
 df.fillna({"col1":0, "col2":"missing"})
+
+#Reading and Writing Data
+df = spark.read.csv("path", header=True, inferSchema=True)
+df = spark.read.json("path")
+df = spark.read.parquet("path")
+
+#Write
+df.write.csv("path")
+df.write.json("path")
+df.write.parquet("path")
+
+#Data type casting
+df.withColumn("age", col("age").cast("int"))
+#Explode
+df.withColumn("exploded_column", explode(col("column")))
