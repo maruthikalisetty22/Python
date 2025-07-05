@@ -1,2 +1,0 @@
-
-playerdf = df.withColumn("playername", split(df["player"], "-").getitem(0)
