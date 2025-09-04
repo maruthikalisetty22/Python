@@ -66,3 +66,44 @@ def is_palyndorm_recursive(str):
   
 a = is_palyndorm_recursive("nursesrun")
 print(a)
+
+
+### 3. Vowels and constraints
+
+#Approach -1 
+def check_oc(str):
+    vowels = "AEIOUaeiou"
+    vowel_list = []
+    vowel_count = 0
+    for i in str:
+        if i in vowels:
+            vowel_list.append(i)
+            vowel_count+= 1
+    
+    if vowel_count > 1:
+        return vowel_list, vowel_count
+    else:
+            return "no vowels"
+
+a = check_oc("Are you there")
+print(a)
+
+
+#Approach -2 
+def check_vowels(str):
+    vowels = "AEIOUaeiou"
+    vowel_list = [char for char in str if char in vowels]
+    return (vowel_list, len(vowel_list)) if vowel_list else "no vowels"
+
+print(check_vowels("Are you there"))  # (['A', 'e', 'o', 'u', 'e', 'e'], 6)
+print(check_vowels("xyz")) 
+
+##Approach - 3 {using dictionary}
+
+def check_oc(s):
+    vowels = "AEIOUaeiou"
+    counts = {v: s.count(v) for v in vowels if v in s}
+    return counts if counts else "no vowels"
+
+print(check_oc("Are you there"))
+print(check_oc("xyz"))
