@@ -34,3 +34,35 @@ def recursive_reverse(str):
 
 a = recursive_reverse("hello")
 print(a)
+
+
+
+### 2.Palyndrome or not
+#Method-1
+def palyndrome(str):
+    if str.replace(" ", "") == str[::-1].replace(" ", ""):
+        print("Yes")
+    else:
+        print("no")
+        
+palyndrome("nurses run")
+
+
+#Method-2 
+def palyndrome(str):
+    return "True" if str == str[::-1] else "False"
+
+a = palyndrome("nursesrun")
+print(a)
+    
+        
+#Method-3                                    
+def is_palyndorm_recursive(str):
+    if len(str) <= 1:
+        return True
+    if str[0] != str[-1]:
+        return False
+    return is_palyndorm_recursive(str[1:-1])    
+  
+a = is_palyndorm_recursive("nursesrun")
+print(a)
