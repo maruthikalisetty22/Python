@@ -107,3 +107,57 @@ def check_oc(s):
 
 print(check_oc("Are you there"))
 print(check_oc("xyz"))
+
+
+########################## String to list, list to string, string to dict, list to dict conversion ###############################
+
+def word_split(s):
+   s_list = s.split() #Convert string to list
+   s_string = " ".join(s_list) #Convert the list to string
+   s_string_dict = {x: s_string.count(x) for x in s_string} #Count occurance of letters in the string
+   s_list_dict = {x: s_list.count(x) for x in s_list} #Count occurance of letters in the list
+   return s_list,s_string, s_string_dict, s_list_dict
+
+var = word_split("hello how are you you")
+print(var)
+
+
+##Find given no occurance and append in a list
+
+def find_given_no(lst):
+    inp_num = int(input("Enter the no : "))
+    count=0
+    emp_list = []
+    for i in lst:
+        if i == inp_num:
+            count+= 1
+            emp_list.append(i)
+    print(count, emp_list)
+
+find_given_no(lst)  
+
+#####Move the zeros to the end of the list without changing the order
+
+lst = [1, 0, 0, 3, 4, 5, 12]
+
+#Approach-1 with creating new list and append
+def move_zeroes(lst):
+    non_zeroes = [x for x in lst if x!= 0]
+    zeros = [0] * (len(lst) - len(non_zeroes))
+    return non_zeroes + zeros
+    
+a = move_zeroes(lst)
+print(a)
+
+#Approach - 2 , In place (using pointers)
+def move_zeroes(lst):
+    post = 0
+    emp_list = []
+    for i in range(len(lst)):
+        if lst[i]!= 0:
+            lst[post], lst[i] = lst[i], lst[post]
+            post+= 1
+    return lst
+    
+a = move_zeroes(lst)
+print(a)
